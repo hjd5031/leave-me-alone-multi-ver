@@ -26,6 +26,7 @@ body:
         - Camera / PIP
         - Graphics / URP / Lighting
         - Build / Editor Tools
+        - System
         - Other
     validations:
       required: true

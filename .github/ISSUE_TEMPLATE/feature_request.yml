@@ -1,0 +1,106 @@
+name: Feature Request
+description: Propose a new gameplay feature, tool, workflow, or improvement.
+title: "[Feature]: "
+labels:
+  - feature
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the player or developer problem first, then propose the smallest useful solution.
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Feature area
+      options:
+        - Player
+        - AI Farmer
+        - Tomatoes / Farming
+        - Vehicle / Drone / Items
+        - Multiplayer / Networking
+        - Dedicated Server
+        - Session / Join Code / Matchmaking
+        - UI / UX
+        - Audio
+        - Camera / PIP
+        - Graphics / URP / Lighting
+        - Build / Editor Tools
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: game_modes
+    attributes:
+      label: Target game mode
+      multiple: true
+      options:
+        - Single Player
+        - Co-op / Multiplayer
+        - Dedicated Server
+        - Shared / All Modes
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or player need
+      description: Explain the problem without assuming a particular implementation.
+      placeholder: Players need a clear way to reconnect to an active match after a short network interruption.
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: Describe the desired behavior and user flow.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance criteria
+      description: Provide observable conditions that define completion.
+      placeholder: |
+        - [ ] A disconnected player can reconnect within 60 seconds.
+        - [ ] The server restores the correct player slot and score.
+        - [ ] Other clients do not receive a duplicate player object.
+    validations:
+      required: true
+
+  - type: textarea
+    id: authority
+    attributes:
+      label: Multiplayer authority and synchronization
+      description: For multiplayer features, explain what the server owns, what clients request, and what state must replicate. Write "Not applicable" otherwise.
+      placeholder: The dedicated server validates reconnect requests and restores authoritative match state.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Describe other solutions, workarounds, or reasons for rejecting them.
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies and affected content
+      description: List related issues, scenes, prefabs, packages, assets, or external services.
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Submission checklist
+      options:
+        - label: I searched existing issues for similar requests.
+          required: true
+        - label: I described the user or developer problem separately from the proposed implementation.
+          required: true
+        - label: I considered both single-player and multiplayer behavior where relevant.
+          required: true

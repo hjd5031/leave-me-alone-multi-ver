@@ -1,0 +1,152 @@
+name: Multiplayer / Networking Bug
+description: Report NGO, Unity Transport, session, connection, replication, or dedicated-server problems.
+title: "[Multiplayer Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for Netcode for GameObjects, Unity Transport, Multiplayer Services, and dedicated-server issues.
+
+  - type: dropdown
+    id: subsystem
+    attributes:
+      label: Affected subsystem
+      options:
+        - Connection / Disconnection
+        - Dedicated Server Startup
+        - Session / Join Code
+        - Matchmaking
+        - Player Spawning / Ownership
+        - Movement / NetworkTransform
+        - RPC
+        - NetworkVariable / State Replication
+        - Scene Management
+        - Score / Match State
+        - Tomato / Item Interaction
+        - AI Farmer
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: observed_on
+    attributes:
+      label: Where was the issue observed?
+      options:
+        - Dedicated Server
+        - Client
+        - Both Server and Client
+        - Unity Editor Multiplayer Play Mode
+        - Unknown
+    validations:
+      required: true
+
+  - type: dropdown
+    id: network_path
+    attributes:
+      label: Network path
+      options:
+        - Same PC / Loopback
+        - Local Area Network
+        - Public Internet / Direct IP
+        - Unity Multiplayer Services Session
+        - Unknown
+    validations:
+      required: true
+
+  - type: input
+    id: versions
+    attributes:
+      label: Unity and package versions
+      description: Include Unity, Netcode for GameObjects, Unity Transport, and Multiplayer Services versions.
+      placeholder: "Unity 6000.0.75f1; NGO 2.13.0; UTP 2.7.3; MPS 2.3.0"
+    validations:
+      required: true
+
+  - type: input
+    id: revision
+    attributes:
+      label: Branch and commit
+      placeholder: "develop @ 431b1d7"
+    validations:
+      required: true
+
+  - type: input
+    id: participants
+    attributes:
+      label: Server and participant count
+      placeholder: "1 dedicated server, 2 clients, 0 bots"
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Problem summary
+      placeholder: Client 2 connects but does not receive its player object.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Start the Windows dedicated server on UDP port 7777.
+        2. Connect Client 1.
+        3. Connect Client 2.
+        4. Observe the spawned player objects.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected network behavior
+      placeholder: Each connected client owns exactly one player and all clients see both players.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual network behavior
+      placeholder: Describe the authoritative and replicated state that was observed.
+    validations:
+      required: true
+
+  - type: textarea
+    id: server_logs
+    attributes:
+      label: Dedicated server logs
+      description: Attach the relevant server log or paste a short excerpt. Remove tokens and public/private endpoint details when necessary.
+      placeholder: Attach server.log or write "Not available."
+
+  - type: textarea
+    id: client_logs
+    attributes:
+      label: Client logs
+      description: Attach Player.log or Console output from every affected client.
+      placeholder: Attach client logs or write "Not available."
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      description: Include ownership IDs, NetworkObject state, latency, packet loss, scene names, and whether the issue is a regression.
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Submission checklist
+      options:
+        - label: I verified that the server process was running and listening before the clients connected.
+          required: true
+        - label: I checked both server and client logs.
+          required: true
+        - label: I confirmed that gameplay state is changed by the server rather than directly by a client.
+          required: true
+        - label: I removed credentials, access tokens, join codes, and sensitive endpoint information.
+          required: true

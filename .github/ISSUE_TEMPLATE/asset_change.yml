@@ -1,0 +1,106 @@
+name: Asset Change Request
+description: Request an asset addition, replacement, import fix, optimization, or removal.
+title: "[Asset]: "
+labels:
+  - enhancement
+body:
+  - type: dropdown
+    id: asset_type
+    attributes:
+      label: Asset type
+      options:
+        - 3D Model / Mesh
+        - Material / Shader
+        - Texture / Sprite
+        - Animation
+        - VFX
+        - Audio / Music
+        - Font
+        - UI Asset
+        - Prefab
+        - Scene / Lighting
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: change_type
+    attributes:
+      label: Requested change
+      options:
+        - Add
+        - Replace
+        - Fix
+        - Optimize
+        - Reimport / Convert
+        - Remove
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Change summary
+      description: Describe exactly what should change and why.
+    validations:
+      required: true
+
+  - type: textarea
+    id: usage
+    attributes:
+      label: Usage locations
+      description: List affected scenes, prefabs, materials, UI screens, or scripts.
+      placeholder: |
+        - Assets/Scene/MainGameScene.unity
+        - NetworkPlayer prefab
+        - Pickup truck PIP camera UI
+    validations:
+      required: true
+
+  - type: textarea
+    id: source_license
+    attributes:
+      label: Source and license
+      description: Provide the source, author, license, proof of purchase, and redistribution restrictions. For original work, state who created it.
+      placeholder: Include a URL and license details, or write "Original project asset."
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical_requirements
+    attributes:
+      label: Unity import and technical requirements
+      description: Include URP shader compatibility, texture size, compression, mesh settings, audio format, platform constraints, and expected folder.
+      placeholder: URP-compatible Lit material, maximum 2048 texture size, Windows and Linux builds.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance criteria
+      placeholder: |
+        - [ ] The asset renders correctly in URP without pink materials.
+        - [ ] No missing references appear in affected prefabs or scenes.
+        - [ ] The asset works in Editor and target builds.
+        - [ ] The source and license are documented.
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References and attachments
+      description: Drag mockups, screenshots, videos, or source files here.
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Submission checklist
+      options:
+        - label: I verified that this asset may legally be used and committed to the repository.
+          required: true
+        - label: I identified every known scene or prefab affected by this change.
+          required: true
+        - label: I considered build size and runtime performance.
+          required: true

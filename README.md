@@ -1,6 +1,6 @@
-# [LEAVE ME ALONE!!!🍅](https://play.unity.com/en/games/85d47c6f-084e-4ce4-a42c-f55f903f2ace/leave-me-alone)
+# LEAVE ME ALONE!!!🍅
 
-## Final Term Project for the Game Programming Course, Department of Software, Sejong University.
+## First Multiplayer game developed by TeamHJD
 
 ## This game is a competitive tomato farming game where you compete against an AI farmer to see who can harvest the most tomatoes within 5 minutes. The AI farmer can do everything the player can, based on its own judgment.
 
@@ -20,7 +20,7 @@ The Pickup Truck rushes to the opponent’s farm and destroys their crops.
 The Boost Drone buffs your own farm, reducing each ripening step to 1 second and the total ripening time to 5 seconds.  
 The Toxic Drone flies to the opponent's field and spreads poison, annihilating their crops.
 ---
-## 세종대학교 소프트웨어학과 게임프로그래밍 강의 Final Term Project입니다.
+## TeamHJD의 첫번째 멀티플레이어 게임입니다
 
 
 이 게임은 AI 농부와 대항해서 토마토 농사를 지어 5분 안에 누가 가장 많이 수확하는지 겨루는 게임입니다.

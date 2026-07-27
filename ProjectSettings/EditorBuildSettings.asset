@@ -6,14 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scene/GameStartScene.unity
+    guid: b56d0f80eb3b9455a803c76adeb64e60
+  - enabled: 1
     path: Assets/Scene/MainGameScene.unity
     guid: ece4f2d729e8e466e9a37d3c2933fd38
   - enabled: 1
-    path: Assets/Scene/GameOverScene.unity
-    guid: f06c203f585874a6fa672a4fda79a010
+    path: Assets/Scene/GameWinScene.unity
+    guid: 7b0fb54e5c6974c71977b345de63cd9a
   - enabled: 1
-    path: Assets/Scene/GameStartScene.unity
-    guid: f1eb57adb95b847d592cc0cc4f044de9
+    path: Assets/Scene/GameLoseScene.unity
+    guid: 5450a672366a647acbdbf1816bb45182
+  - enabled: 1
+    path: Assets/Scene/GameTieScene.unity
+    guid: 5ee1a5ad0f0834bc589d74bb284971a5
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 99f9c9493070a9d4c979a8fec7c5a8d3, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
